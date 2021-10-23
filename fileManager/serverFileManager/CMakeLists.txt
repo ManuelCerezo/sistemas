@@ -5,6 +5,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project (serverFileManager)
 
-add_executable (fileManager main_fm.cpp filemanager.cpp filemanager.h filemanager_imp.cpp filemanager_imp.h serverMain.cpp utils.cpp utils.h)
+add_executable (serverFileManager filemanager.cpp filemanager.h filemanager_imp.cpp filemanager_imp.h serverMain.cpp utils.cpp utils.h)
 
 target_link_libraries(serverFileManager pthread)

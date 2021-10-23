@@ -3,8 +3,8 @@ set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-project (clientFileManager)
+project (client_FileManager)
 
-add_executable (fileManager main_fm.cpp filemanager_stub.cpp filemanager_stub.h utils.cpp utils.h)
+add_executable (client_FileManager main_fm.cpp filemanager_stub.cpp filemanager_stub.h utils.cpp utils.h)
 
-target_link_libraries(clientFileManager pthread)
+target_link_libraries(client_FileManager pthread)

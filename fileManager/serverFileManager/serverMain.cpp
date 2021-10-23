@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "filemanager_imp.h"
-
-#define SERVER_PORT         75000
 using namespace std;
 
 
