@@ -5,6 +5,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project (client_FileManager)
 
-add_executable (client_FileManager main_fm.cpp filemanager_stub.cpp filemanager_stub.h utils.cpp utils.h)
+add_executable (client_FileManager main_fm.cpp filemanager_stub.cpp local_env.cpp local_env.h filemanager_stub.h utils.cpp utils.h)
 
 target_link_libraries(client_FileManager pthread)
