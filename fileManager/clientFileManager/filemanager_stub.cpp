@@ -1,6 +1,5 @@
 #include "filemanager_stub.h"
 
-
 Filemanager_stub::Filemanager_stub(std::string path){
     char *ip = new char[strlen(SERVER_IP)+1];
     memcpy(ip,SERVER_IP,strlen(SERVER_IP)+1);
