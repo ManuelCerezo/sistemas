@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernetes-filemanager
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: filemanager
+  template:
+    metadata:
+      labels:
+        app: filemanager
+    spec:
+      containers:
+      - name: kubernetes-filemanager
+        image: docker.io/manuelcerezo/filemanaguer:1.0
+        volumeMounts:
+        - mountPath: /directorio
+          name: volumen-compartido
+      volumes:
+      - name: volumen-compartido
+        hostPath:
+      # directory location on host
+          path: /home/manuel/Escritorio/ingenieria_software/curso3/sistemas/AAProyecto2/server_file/directorio_compartido
+      # this field is optional
+          type: Directory
