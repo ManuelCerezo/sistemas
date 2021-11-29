@@ -47,10 +47,39 @@ void Filemanager_stub::readFile(char *fileName, char *&data, unsigned long int &
     delete paquete;
 
     //recibimos contenido del fichero
+
+    /*
     recvMSG(this->server_id,(void**)&paquete,&recv_dataLen);
     dataLength = recv_dataLen - sizeof(unsigned long int);
     data = new char[dataLength];
-    memcpy(data,&paquete[sizeof(unsigned long int)],dataLength);
+    memcpy(data,&paquete[sizeof(unsigned long int)],dataLength);*/
+
+    //se reciben bloques de 1024 bytes
+    recvMSG(this->server_id,(void**)&paquete,&recv_dataLen);
+    //el primer long int tiene el tamaño completo, se calcula el número de paquetes a partir de él
+    memcpy(&dataLength,paquete,sizeof(unsigned long int));
+    int tamPack=1024;
+    int numPacks=dataLength/tamPack;
+    int rest=dataLength%tamPack;
+
+    if(rest>0) numPacks+=1;
+
+    data = new char[dataLength];
+    char* recvPtr=data;
+    paquete+=sizeof(unsigned long int);
+    memcpy(recvPtr,paquete,recv_dataLen-sizeof(unsigned long int));
+    recvPtr+=recv_dataLen-sizeof(unsigned long int);
+    paquete-=sizeof(unsigned long int);
+    delete[] paquete;
+
+    for(int i=1;i<numPacks;i++)
+    {
+        recvMSG(this->server_id,(void**)&paquete,&recv_dataLen);
+        memcpy(recvPtr,paquete,recv_dataLen);
+        recvPtr+=recv_dataLen;
+        delete[] paquete;
+    }
+
 }
 void Filemanager_stub::writeFile(char *fileName, char *data, unsigned long int dataLength){
     int tipo_operacion = OP_WRITE_FILE;
@@ -75,7 +104,18 @@ void Filemanager_stub::writeFile(char *fileName, char *data, unsigned long int d
     memcpy(&paquete[sizeof(unsigned long int)],data,dataLength);
 
     //Mandamos segundo paquete.
-    sendMSG(this->server_id,(void*)paquete,sizeof(unsigned long int )+dataLength);
+    //se divide en bloques de 1024 bytes
+    int tamPack=1024;
+    int numPacks=(sizeof(unsigned long int )+dataLength)/tamPack;
+    int rest=(sizeof(unsigned long int )+dataLength)%tamPack;
+    char* prtOut=paquete;
+    for(int i =0;i<numPacks;i++){
+        sendMSG(this->server_id,(void*)prtOut,tamPack);
+        prtOut+=tamPack;
+    }
+    if(rest>0)
+        sendMSG(this->server_id,(void*)prtOut,rest);
+
     delete paquete;
 }
 
