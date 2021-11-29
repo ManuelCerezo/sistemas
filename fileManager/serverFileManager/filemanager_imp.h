@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include "utils.h"
 
-#define SERVER_PORT             75000
+#define SERVER_PORT             42500
 #define OP_SALIR 				0
 #define OP_READ_FILE 		    10
 #define OP_WRITE_FILE  		    11
