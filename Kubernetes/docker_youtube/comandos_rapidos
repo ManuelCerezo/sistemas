@@ -1,0 +1,5 @@
+kubectl create deployment mariadbapache --image=marcosnovalbos/mariadb_apache:1.0
+kubectl expose deployment mariadbapache --type="NodePort" --port 80,3306
+
+añadir a /etc/kubernetes/manifests/kube-apiserver.yaml "- --service-node-port-range=1-22767"
+
