@@ -1,5 +1,5 @@
 $(document).ready(main)
 
 function main(){
-    $('#titulo').html("WELCOME "+sessionStorage.usuario)
+    $('#titulo').html("Welcome "+sessionStorage.usuario+" !")
 }
