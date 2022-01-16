@@ -114,7 +114,7 @@ RUN set -ex; \
 # don't reverse lookup hostnames, they are usually another container
 	echo '[mysqld]\nskip-host-cache\nskip-name-resolve' > /etc/mysql/conf.d/docker.cnf
 
-VOLUME /var/lib/mysql
+#VOLUME /var/lib/mysql
 
 COPY docker-entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["docker-entrypoint.sh"]
@@ -126,9 +126,8 @@ RUN apt-get update
 RUN apt-get install -y awscli apache2 curl nano php libapache2-mod-php php7.4-mysql
 EXPOSE 80
 
-
 COPY lambda_gateway.php /var/www/html/
-COPY success.html    /var/www/html/
+COPY keys_gateway.php /var/www/html/
 COPY start.sh /
 COPY 50-server.cnf /etc/mysql/mariadb.conf.d/
 RUN chmod 777 /start.sh 
