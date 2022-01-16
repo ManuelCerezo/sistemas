@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="uft-8">
+        <title>YouTube</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- CDN DE REACT-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+        <!-- CDN DE BOOSTRAP-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+        crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+        crossorigin="anonymous"></script>
+        <!--CDN DE JQUERY-->
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+        <script src="./src/dashboard.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="./src/dash.css">
+    </head>
+    <body class="bg-light">
+        <nav class="navbar navbar-light bg-light fixed-top">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col col-md"><svg class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                      </svg></div>
+                      <div class="col col-md"><h1 class="text-center text-dark">YouTube</h1></div>
+                </div>
+            </div>
+          </nav>
+          <header>
+            <div class="overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                <source src="./src/header.mp4" type="video/mp4">
+            </video>
+            </header>
+          <div class="container-fluid justify-content-center text-center p-5 shadow" style="background-color:rgb(175, 0, 0);">
+            <h1 id="titulo"class="text-white"></h1>
+        </div>
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <a href="./dashboard.html" style="text-decoration:none"><h5 class="offcanvas-title text-danger" id="offcanvasExampleLabel">YOUTUBE</h5></a>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <div class="text-secondary mb-5">
+                Share and show your favorite videos with our community, lets do it !
+              </div>
+                <ul class="menu mt-5">
+                    <a class="dropdown-item" href="upload_videos.html">Upload Videos</a>
+                  <a class="dropdown-item" href="#">Show Videos</a>
+                  <a class="dropdown-item text-secondary" href="index.html">Log out</a>
+                </ul>
+            </div>
+          </div>
+
+          <!--PLANTILLA-->
+        <section class="py-5 bg-danger">
+            <div class="container px-lg-5">
+                <div class="p-4 p-lg-5 bg-light rounded-3 text-center shadow">
+                    <div class="m-4 m-lg-5 ">
+                        <h1 class="display-5 fw-bold">YouTube <span><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                            <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+                          </svg></span></h1>
+                        <p class="fs-4 mt-2">This is a new webpage where you can share and show to the community your favorite videos. Take a look to our big diversity of categories. Enjoy it !</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Page Content-->
+        <section class="pt-4">
+            <div class="container px-lg-5">
+                <!-- Page Features-->
+                <div class="row gx-lg-5">
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                        <div class="card bg-light border-0 h-100 ">
+                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0 shadow">
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-collection"></i></div>
+                                <svg class="fs-4 fw-bold" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                                    <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z"/>
+                                  </svg>
+                                  <h2 class="fs-4 fw-bold mt-1">Films</h2>
+                                <p class="mb-0 text-secondary">Enjoy the movies you like the most, with the best quality and resolution</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                        <div class="card bg-light border-0 h-100">
+                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0 shadow">
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-cloud-download"></i></div>
+                                <svg class="fs-4 fw-bold" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-music-note-beamed" viewBox="0 0 16 16">
+                                    <path d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13c0-1.104 1.12-2 2.5-2s2.5.896 2.5 2zm9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2z"/>
+                                    <path fill-rule="evenodd" d="M14 11V2h1v9h-1zM6 3v10H5V3h1z"/>
+                                    <path d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4V2.905z"/>
+                                  </svg>
+                                  <h2 class="fs-4 fw-bold mt-1">Music</h2>
+                                <p class="mb-0 text-secondary">Join us to see all the music videos of the best artists of the moment</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                        <div class="card bg-light border-0 h-100">
+                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0 shadow">
+                                <svg class="mt-3" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
+                                    <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
+                                    <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/>
+                                  </svg>
+                                  <h2 class="fs-4 fw-bold mt-1">Learn</h2>
+                                <p class="mb-0 text-secondary">We have plenty of tutorials ... Why don't you learn something new? </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                        <div class="card bg-light border-0 h-100">
+                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0 shadow">
+                                <svg class="mt-3" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-bar-chart-line" viewBox="0 0 16 16">
+                                    <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z"/>
+                                  </svg>
+                                  <h2 class="fs-4 fw-bold mt-1">Tendence</h2>
+                                <p class="mb-0 text-secondary">Get up to date with the latest news, shared by users</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                        <div class="card bg-light border-0 h-100">
+                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0 shadow">
+                                <svg class="mt-3"xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-hand-thumbs-up" viewBox="0 0 16 16">
+                                    <path d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111L8.864.046zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z"/>
+                                  </svg>
+                                  <h2 class="fs-4 fw-bold mt-1">Vote</h2>
+                                <p class="mb-0 text-secondary">Support content creators giving likes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                        <div class="card bg-light border-0 h-100">
+                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0 shadow">
+                                <svg class="mt-3" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-chat-square-text" viewBox="0 0 16 16">
+                                    <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                                    <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
+                                  </svg>
+                                  <h2 class="fs-4 fw-bold mt-1">Comment</h2>
+                                <p class="mb-0 text-secondary">Comment on your favorite videos and interact with other users </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Manuel Cerezo y Miguel Herencia</p></div>
+        </footer>
+    </body>
+</html>
+    
