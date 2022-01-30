@@ -6,32 +6,31 @@ var usuarios = []
 var cantidad_anterior = 0
 var fechas = []
 
-function mostrar(){ //GUARDAR DATOS EN CACHÉ
-    window.location.replace('comentario_voto.html');
+function mostrar(usuario,titulo,categoria,fecha,url){ //GUARDAR DATOS EN CACHÉ
+    alert("usuario:"+usuario)
+    alert("titulo: "+titulo)
+    
+    sessionStorage.usuario_video = usuario
+    sessionStorage.titulo_video = titulo
+    sessionStorage.categoria_video = categoria
+    sessionStorage.fecha_video = fecha
+    sessionStorage.url_video = url
+
+    window.location.replace("video.html");
 }
 
+
 function create_spin(){
+
     
     $('#mostrador').append(
-        '<div id="spin" className="row">'+
-            '<div className="col"></div>'+
-                '<div className="col-9 bg-white p-5 bg-light">'+
-                    '<div class="ratio ratio-4x3 ">'+
-                        '<div  class="d-flex justify-content-center">'+
-                            '<div class="spinner-border" role="status">'+
-                                '<span class="visually-hidden">Loading...</span>'+
-                            '</div>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-            '<div className="col"></div>'+
-        '</div>')
-}
-function removetablero(){
-    $('#tablero').remove()
-}
-function settablero(){
-    $('#mostrador').append('<div id="tablero" class="container-fluid" style="text-align:left; padding-left:6px"></div>')
+        '<div id="spin" class="ratio ratio-1x1 bg-light">'+
+  '<div  class="d-flex justify-content-center">'+
+    '<div class="spinner-border" role="status">'+
+      '<span class="visually-hidden">Loading...</span>'+
+    '</div>'+
+  '</div>'+
+  '</div>')
 }
 
 function remove_spin(){

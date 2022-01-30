@@ -13,6 +13,10 @@ function init(){
     $('#titulo').html(sessionStorage.usuario+"'s videos")
     create_videos_user()
 }
+function asler(){
+    var a = 1
+    alert(a)
+}
 function create_videos_user(){
     setTimeout(create_divs,2000)
     send_user()

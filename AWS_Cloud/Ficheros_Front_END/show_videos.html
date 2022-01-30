@@ -57,6 +57,9 @@
     <div id ="src" class="container-fluid justify-content-center   bg-secondary">  
     </div>
     <!--BUSCADOR-->
+
+
+
     <div id="mostrador" class="container-fluid">
         <div id="tablero" class="container-fluid" style="text-align:left; padding-left:6px"></div>
     </div>
@@ -94,7 +97,6 @@
                     ReactDOM.render(
                         <Nada />,
                         document.getElementById("tablero"));
-                        
                     for(p=0;p<cantidad;p++){
                         ReactDOM.render(
                         <Busqueda usuario={usuarios[p]} titulo={titulos[p]} url={urls[p]} categoria={tagg} fecha={fechas[p]}/>,
@@ -125,13 +127,7 @@
         });
         var Busqueda = React.createClass({
             go_video: function(){
-                //almacenamiento en caché de los metadatos del video seleccionado
-                sessionStorage.tituloVideo = this.props.titulo
-                sessionStorage.url = this.props.url
-                sessionStorage.categoria = this.props.categoria
-                sessionStorage.fecha = this.props.fecha
-                sessionStorage.usuario_video = this.props.usuario
-                mostrar()
+                mostrar(this.props.usuario,this.props.titulo,this.props.categoria,this.props.fecha,this.props.url)
             },
             renderNone: function(){
                 return(
